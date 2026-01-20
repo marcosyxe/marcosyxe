@@ -2,125 +2,167 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>marcosyxe</title>
   <meta name="description" content="marcosyxe — official website" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- overlays -->
-  <div class="overlay overlay-crt"></div>
-  <div class="overlay overlay-noise"></div>
-  <div class="overlay overlay-vignette"></div>
+  <!-- BACKGROUND (blurred in CSS) -->
+  <div class="bg" aria-hidden="true"></div>
 
-  <!-- TOP BAR -->
-  <header class="topbar">
-    <div class="top-left">
-      <span class="logo">marcosyxe</span>
-      <span class="pill" id="clock">ONLINE</span>
-      <span class="pill danger">!! new upload</span>
-    </div>
+  <div class="frame">
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="top-left">
+        <div class="brand">
+          <div class="brand-mark">marcosyxe</div>
+          <div class="brand-sub">online archive</div>
+        </div>
+      </div>
 
-    <nav class="nav">
-      <a href="#music">music</a>
-      <a href="#visuals">visuals</a>
-      <a href="#news">news</a>
-      <a href="#links">links</a>
-    </nav>
-  </header>
+      <nav class="topnav">
+        <a href="#music">MUSIC</a>
+        <a href="#visuals">VISUALS</a>
+        <a href="#news">NEWS</a>
+        <a href="#links">LINKS</a>
+      </nav>
 
-  <main class="wrap">
-    <!-- HERO -->
+      <div class="top-right">
+        <span class="chip" id="clock">ONLINE</span>
+        <span class="chip danger">!! new upload</span>
+      </div>
+    </header>
+
+    <!-- HERO STRIP -->
     <section class="hero">
-      <h1>marcosyxe</h1>
+      <div class="hero-title">
+        <h1 class="title">marcosyxe</h1>
+        <div class="motto">aquestes pijas el camí tenen fet</div>
+      </div>
 
       <div class="ticker">
-        <div class="track">
+        <div class="ticker-inner">
           ★ WELCOME ★ NEOPRENO OUT NOW ★ SUBLIMACJA MUSIC VIDEO ★ ENTER THE ARCHIVE ★ ALSAYFA ★ BEHIND THE SCENES ★
         </div>
       </div>
-
-      <!-- IMAGE -->
-      <div class="hero-image">
-        <img src="images/01C45E5C-1F56-46BA-810B-F05FC05E1733.jpeg" alt="marcosyxe visual">
-      </div>
-
-      <div class="cta">
-        <a class="btn primary" href="#music">MUSIC</a>
-        <a class="btn" href="#visuals">VISUALS</a>
-        <a class="btn" href="#links">LINKS</a>
-      </div>
-
-      <div class="diagonal">aquestes pijas el camí tenen fet</div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="layout">
-      <!-- ABOUT -->
+    <!-- PORTAL LAYOUT -->
+    <main class="portal">
+      <!-- LEFT SIDEBAR -->
       <aside class="side">
-        <div class="box">
-          <div class="boxhead">about</div>
-          <div class="rows">
-            <p>
-              <strong>marcosyxe</strong> is an experimental music producer blending
-              industrial textures with world influences.
-            </p>
-            <p>
-              New album: <strong>NEOPRENO</strong> — out now.
-            </p>
+        <section class="panel">
+          <div class="ph">navigation</div>
+          <div class="pb">
+            <ul class="menu">
+              <li><a href="#music">Music / Releases</a></li>
+              <li><a href="#visuals">Visual Archive</a></li>
+              <li><a href="#news">Updates</a></li>
+              <li><a href="#links">Contact / Links</a></li>
+            </ul>
           </div>
-        </div>
+        </section>
+
+        <section class="panel">
+          <div class="ph">about</div>
+          <div class="pb">
+            <p><b>marcosyxe</b> is an experimental music producer blending industrial textures with world influences.</p>
+            <div class="rule"></div>
+            <p class="small"><b>Now:</b> NEOPRENO — out now.</p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="ph">status</div>
+          <div class="pb stats">
+            <div><span class="k">system</span><span class="v">online</span></div>
+            <div><span class="k">mode</span><span class="v">night</span></div>
+            <div><span class="k">archive</span><span class="v">open</span></div>
+          </div>
+        </section>
       </aside>
 
-      <!-- MAIN -->
-      <section class="main">
-        <div class="box big" id="music">
-          <div class="boxhead">music</div>
-          <div class="rows">
-            <p>Listen on:</p>
-            <div class="links">
-              <a class="link" href="https://open.spotify.com/artist/5dq0rbeFgF8bfHyHK5cG3L" target="_blank">Spotify</a>
-              <a class="link" href="https://music.apple.com/es/artist/marcosyxe/1743644428" target="_blank">Apple Music</a>
-              <a class="link" href="https://marcosyxe.bandcamp.com/community" target="_blank">Bandcamp</a>
-              <a class="link" href="https://youtube.com/@marcosyxe-ev7iy" target="_blank">YouTube</a>
+      <!-- CENTER FEATURE -->
+      <section class="center">
+        <section class="panel feature">
+          <div class="ph">featured</div>
+          <div class="pb">
+            <div class="feature-grid">
+              <div class="feature-media">
+                <img src="images/01C45E5C-1F56-46BA-810B-F05FC05E1733.jpeg" alt="featured visual">
+              </div>
+              <div class="feature-info">
+                <div class="feature-title">NEOPRENO</div>
+                <div class="feature-sub">visual file / archive preview</div>
+                <div class="rule"></div>
+                <div class="cta-row">
+                  <a class="btn" href="#music">listen</a>
+                  <a class="btn" href="#visuals">visuals</a>
+                  <a class="btn" href="#news">updates</a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div class="box big" id="visuals">
-          <div class="boxhead">visuals</div>
-          <div class="rows">
-            <p>Visual archive coming soon.</p>
+        <section class="panel" id="news">
+          <div class="ph">updates</div>
+          <div class="pb">
+            <p><b>30.01.2026</b> — <b>NEOPRENO</b> the album out now.</p>
+            <p class="small muted">Add more posts later (behind the scenes, video drops, etc.).</p>
           </div>
-        </div>
+        </section>
 
-        <div class="box big" id="news">
-          <div class="boxhead">news</div>
-          <div class="rows">
-            <p><strong>30.01.2026</strong> — <strong>NEOPRENO</strong> the album out now.</p>
+        <section class="panel" id="visuals">
+          <div class="ph">visual archive</div>
+          <div class="pb">
+            <p class="small"><b>coming soon</b></p>
+            <p class="muted">Next: we’ll place thumbnails + stickers here.</p>
           </div>
-        </div>
-
-        <div class="box big" id="links">
-          <div class="boxhead">links</div>
-          <div class="links">
-            <a class="link" href="https://www.instagram.com/marcosyxe" target="_blank">instagram</a>
-          </div>
-        </div>
+        </section>
       </section>
-    </section>
-  </main>
 
-  <!-- SPARKLES -->
+      <!-- RIGHT MODULES -->
+      <aside class="right">
+        <section class="panel" id="music">
+          <div class="ph">music</div>
+          <div class="pb">
+            <p class="small"><b>Listen on</b></p>
+            <div class="gridbtns">
+              <a class="btn2" href="https://open.spotify.com/artist/5dq0rbeFgF8bfHyHK5cG3L?si=betkT0M4QLqlBc7_ppkUbw" target="_blank" rel="noopener">Spotify</a>
+              <a class="btn2" href="https://music.apple.com/es/artist/marcosyxe/1743644428" target="_blank" rel="noopener">Apple Music</a>
+              <a class="btn2" href="https://marcosyxe.bandcamp.com/community" target="_blank" rel="noopener">Bandcamp</a>
+              <a class="btn2" href="https://youtube.com/@marcosyxe-ev7iy?si=WXS_N9iDZQ2gd7uy" target="_blank" rel="noopener">YouTube</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" id="links">
+          <div class="ph">links</div>
+          <div class="pb">
+            <a class="btn2 wide" href="https://www.instagram.com/marcosyxe?igsh=aWV5dWlmcXVyam92&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="ph">notes</div>
+          <div class="pb">
+            <p class="small muted">best viewed at 2am.</p>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <span class="mono muted">© <span id="year"></span> marcosyxe</span>
+      <span class="mono muted">portal interface / 2003 energy</span>
+    </footer>
+  </div>
+
+  <!-- sparkles (your existing script.js uses this) -->
   <div id="sparkles"></div>
-
-  <footer class="footer">
-    <span>© <span id="year"></span> marcosyxe</span>
-    <span class="muted">night mode only</span>
-  </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
-
