@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>marcosyxe</title>
+  <meta name="description" content="marcosyxe — emo-maximalist web archive" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="fx-on chaos-on">
+  <!-- OVERLAYS -->
+  <div class="overlay overlay-crt"></div>
+  <div class="overlay overlay-noise"></div>
+  <div class="overlay overlay-vignette"></div>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="top-left">
+      <span class="logo">marcosyxe</span>
+      <span class="pill" id="clock">ONLINE</span>
+      <span class="pill danger"><span class="blink">!!</span> new upload</span>
+    </div>
+    <nav class="nav">
+      <a href="#music">music</a>
+      <a href="#visuals">visuals</a>
+      <a href="#news">news</a>
+      <a href="#links">links</a>
+      <button class="navbtn" id="toggleFx">FX: ON</button>
+      <button class="navbtn" id="toggleChaos">CHAOS: ON</button>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>MARCOSYXE</h1>
+        <p class="sub">emo-maximalist / dark web archive / blue-teal-magenta</p>
+
+        <div class="ticker">
+          <div class="track">
+            ★ ENTER THE ARCHIVE ★ NEW RELEASE SOON ★ WATCH VISUALS ★ BEST VIEWED AT 2AM ★
+            ★ ENTER THE ARCHIVE ★ NEW RELEASE SOON ★ WATCH VISUALS ★ BEST VIEWED AT 2AM ★
+          </div>
+        </div>
+
+        <div class="cta">
+          <a class="btn primary" href="#music">listen</a>
+          <a class="btn" href="#visuals">visuals</a>
+          <a class="btn" href="#links">links</a>
+          <button class="btn ghost" id="spawnPopup">spawn window</button>
+        </div>
+
+        <div class="diagonal">DO NOT FEED THE ALGORITHM</div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="layout">
+      <aside class="side">
+        <div class="box">
+          <div class="boxhead">status</div>
+          <div class="rows">
+            <div class="row"><span class="k">mood</span><span class="v">blue screen romance</span></div>
+            <div class="row"><span class="k">currently</span><span class="v">mixing / deleting takes</span></div>
+            <div class="row"><span class="k">energy</span><span class="v">low battery</span></div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="boxhead">buttons</div>
+          <div class="buttons">
+            <span class="button88">best viewed at 2am</span>
+            <span class="button88">emo web archive</span>
+            <span class="button88">no angels online</span>
+            <span class="button88">marcosyxe</span>
+          </div>
+        </div>
+      </aside>
+
+      <section class="main">
+        <div class="box big" id="music">
+          <div class="boxhead">music</div>
+          <p class="muted tiny">NEOPRENO / ALSAYFA / singles</p>
+        </div>
+
+        <div class="box big" id="visuals">
+          <div class="boxhead">visuals</div>
+          <p class="muted tiny">stills / posters / glitches</p>
+        </div>
+
+        <div class="box big" id="news">
+          <div class="boxhead">news</div>
+          <p class="muted tiny">2026.01.20 — site initialized</p>
+        </div>
+
+        <div class="box big" id="links">
+          <div class="boxhead">links</div>
+          <div class="links">
+            <a class="link" href="#">spotify</a>
+            <a class="link" href="#">instagram</a>
+            <a class="link" href="#">youtube</a>
+            <a class="link" href="#">email</a>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- POPUPS + SPARKLES -->
+  <div id="popups"></div>
+  <div id="sparkles"></div>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> marcosyxe</span>
+    <span class="muted">night mode only</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
