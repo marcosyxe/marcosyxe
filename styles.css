@@ -306,4 +306,15 @@ body{
   object-fit:cover;
   filter: contrast(1.05) brightness(.95);
 }
-
+/* Fondo con blur real */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    url("images/1C29458B-8AFE-4D35-B106-D8E78AD4D56D.jpeg")
+    center / cover no-repeat;
+  filter: blur(10px);
+  transform: scale(1.05);
+  z-index:-3;
+}
