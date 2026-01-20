@@ -1,4 +1,4 @@
-// footer year (si existe)
+// footer year
 const y = document.getElementById("year");
 if (y) y.textContent = new Date().getFullYear();
 
@@ -12,24 +12,6 @@ function tick(){
 }
 tick();
 setInterval(tick, 10000);
-
-// FX toggle
-const fxBtn = document.getElementById("toggleFx");
-if (fxBtn){
-  fxBtn.addEventListener("click", () => {
-    document.body.classList.toggle("fx-on");
-    fxBtn.textContent = `FX: ${document.body.classList.contains("fx-on") ? "ON" : "OFF"}`;
-  });
-}
-
-// CHAOS toggle (optional class)
-const chaosBtn = document.getElementById("toggleChaos");
-if (chaosBtn){
-  chaosBtn.addEventListener("click", () => {
-    document.body.classList.toggle("chaos-on");
-    chaosBtn.textContent = `CHAOS: ${document.body.classList.contains("chaos-on") ? "ON" : "OFF"}`;
-  });
-}
 
 // SPARKLES
 const sparkleLayer = document.getElementById("sparkles");
@@ -50,9 +32,6 @@ function spawnSparkle(x, y){
   s.style.width = `${size}px`;
   s.style.height = `${size}px`;
 
-  const rot = Math.floor(Math.random() * 30) - 15;
-  s.style.transform = `translate(-50%, -50%) rotate(${rot}deg)`;
-
   sparkleLayer.appendChild(s);
   setTimeout(() => s.remove(), 650);
 }
@@ -63,7 +42,6 @@ function onMove(x, y){
   const dy = y - last.y;
   const dist = Math.hypot(dx, dy);
 
-  // throttle: avoid too many DOM nodes
   if (dist > 10 && (now - last.t) > 16){
     spawnSparkle(x, y);
     if (dist > 45) spawnSparkle(x, y);
