@@ -420,3 +420,15 @@ body{
   .neoTwoCols{ grid-template-columns: 1fr; }
   .neoGallery{ grid-template-columns: repeat(2, 1fr); }
 }
+/* --- NEOPRENO covers size fix --- */
+.neopreno-covers {
+  display: flex;
+  gap: 16px;
+}
+
+.neopreno-covers img {
+  width: 200px;     /* controla el tamaño */
+  max-width: 100%;
+  height: auto;     /* mantiene el cuadrado original */
+  border: 1px solid rgba(255,255,255,0.25);
+}
