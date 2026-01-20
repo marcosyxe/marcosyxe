@@ -22,17 +22,9 @@ html,body{ margin:0; padding:0; }
 body{
   font-family: "IM Fell English", Georgia, serif;
   background:
-    radial-gradient(900px 400px at 10% 5%, rgba(255,31,168,.12), transparent 60%),
-    radial-gradient(900px 400px at 90% 10%, rgba(0,230,192,.10), transparent 60%),
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,.02) 0px,
-      rgba(255,255,255,.02) 1px,
-      rgba(0,0,0,0) 4px,
-      rgba(0,0,0,0) 9px
-    ),
-    linear-gradient(180deg, var(--bg), var(--bg2));
-  color:var(--ink);
+    url("images/1C29458B-8AFE-4D35-B106-D8E78AD4D56D.jpeg")
+    center / cover no-repeat fixed;
+  color: var(--ink);
 }
 
 /* ---------------------------------------------------------
