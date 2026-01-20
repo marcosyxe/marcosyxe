@@ -4,290 +4,298 @@
   --ui: Tahoma, Verdana, Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
-  /* corporate steel palette (more grey, less neon) */
-  --steelA: rgba(220,228,238,0.34);
-  --steelB: rgba(200,210,226,0.26);
-  --steelC: rgba(120,140,170,0.18);
+  --black:#06060a;
+  --black2:#0b0b12;
+  --panel:#12121a;
+  --panel2:#0f0f16;
+  --line: rgba(255,255,255,0.18);
+  --line2: rgba(255,255,255,0.10);
 
-  --panel: rgba(232,238,246,0.22);
-  --panel2: rgba(232,238,246,0.18);
+  --text: rgba(245,245,255,0.88);
+  --muted: rgba(245,245,255,0.58);
 
-  --borderHi: rgba(255,255,255,0.45);
-  --borderLo: rgba(0,0,0,0.25);
-
-  --text: rgba(10,12,18,0.86);
-  --muted: rgba(10,12,18,0.55);
-
-  /* subtle tint */
-  --magenta: rgba(255,43,178,0.10);
-  --teal: rgba(0,230,192,0.08);
+  --red:#b31313;
+  --blueLink:#2f48ff;
 }
 
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; }
-body{ font-family: var(--ui); color: var(--text); }
+body{
+  font-family: "IM Fell English", serif;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--black), var(--black2));
+}
 
-/* Background: IMG_6561 blur 140px */
+/* Background: IMG_6561 + blur 140px, subtle */
 .bg{
   position: fixed;
   inset: 0;
   z-index: -10;
   background: url("images/IMG_6561.jpeg") center/cover no-repeat;
   filter: blur(140px) saturate(0.9) contrast(0.95);
-  transform: scale(1.35);
+  transform: scale(1.4);
+  opacity: 0.55;
 }
 .bg::after{
   content:"";
   position:absolute;
   inset:0;
   background:
-    linear-gradient(180deg, rgba(8,12,24,0.35), rgba(8,12,24,0.22)),
-    radial-gradient(900px 520px at 20% 30%, var(--magenta), transparent 65%),
-    radial-gradient(900px 520px at 80% 35%, var(--teal), transparent 70%);
+    radial-gradient(900px 520px at 25% 30%, rgba(255,43,178,0.22), transparent 65%),
+    radial-gradient(900px 520px at 80% 35%, rgba(0,230,192,0.14), transparent 70%),
+    linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.45));
   mix-blend-mode: multiply;
 }
 
-/* Shell */
-.portalShell{
-  max-width: 1060px;
-  margin: 16px auto 28px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.06));
-  box-shadow: 0 24px 70px rgba(0,0,0,0.35);
+/* page container */
+.page{
+  max-width: 980px;
+  margin: 14px auto 30px;
+  border: 1px solid var(--line);
+  background: rgba(0,0,0,0.35);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.6);
 }
 
-/* Top header */
-.topHeader{
-  display:grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 12px;
-  align-items:center;
-  padding: 10px 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.20), rgba(255,255,255,0.08));
-  border-bottom: 1px solid rgba(255,255,255,0.30);
-}
-
-/* brand */
-.brandRow{ display:flex; align-items:baseline; gap:10px; }
-.brandLogo{
-  font-family: "UnifrakturMaguntia", serif;
-  font-size: 22px;
-  color: rgba(12,14,20,0.74);
-  /* NO neon; engraved */
-  text-shadow: 1px 1px 0 rgba(255,255,255,0.25), 0 2px 6px rgba(0,0,0,0.18);
-}
-.brandSub{
-  font-family: var(--mono);
-  font-size: 12px;
-  color: rgba(12,14,20,0.52);
-}
-
-.topTabs{
+/* TOP BAR with tabs */
+.topbar{
   display:flex;
-  gap: 6px;
-  justify-content:center;
+  justify-content: space-between;
+  align-items:center;
+  gap: 10px;
+  padding: 10px 10px;
+  background: linear-gradient(180deg, rgba(179,19,19,0.85), rgba(120,10,10,0.85));
+  border-bottom: 1px solid rgba(0,0,0,0.45);
+}
+.tabs{
+  display:flex;
+  gap: 10px;
   flex-wrap:wrap;
 }
-.topTabs a{
+.tab{
+  font-family: var(--ui);
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  padding: 6px 10px;
-  color: rgba(10,12,18,0.74);
+  color: rgba(255,255,255,0.92);
   text-decoration:none;
-
-  background: rgba(255,255,255,0.18);
-  border: 1px solid var(--borderLo);
-  box-shadow: inset 0 1px 0 var(--borderHi), inset 0 -1px 0 rgba(0,0,0,0.08);
+  padding: 6px 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.18);
 }
-.topTabs a:hover{ border-color: rgba(0,0,0,0.32); background: rgba(255,255,255,0.24); }
+.tab:hover{ background: rgba(0,0,0,0.28); }
 
-.topStatus{
+.topright{
   display:flex;
-  justify-content:flex-end;
   gap: 8px;
+  align-items:center;
   flex-wrap:wrap;
 }
-.statusChip{
+.clock, .newupload{
   font-family: var(--mono);
   font-size: 12px;
   padding: 5px 8px;
-  background: rgba(255,255,255,0.18);
-  border: 1px solid var(--borderLo);
-  color: rgba(0,0,0,0.68);
+  background: rgba(0,0,0,0.22);
+  border: 1px solid rgba(255,255,255,0.18);
 }
-.statusChip.danger{
-  background: rgba(255,43,178,0.12);
-  border-color: rgba(255,43,178,0.22);
-  color: rgba(70,0,40,0.75);
-}
+.newupload{ border-color: rgba(255,43,178,0.35); }
 
-/* thin subheader */
-.subHeader{
-  display:flex;
-  justify-content: space-between;
+/* mast area */
+.mast{
+  display:grid;
+  grid-template-columns: 240px 1fr;
   gap: 10px;
-  padding: 8px 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
-  border-bottom: 1px solid rgba(255,255,255,0.20);
+  padding: 12px;
+  background: rgba(0,0,0,0.32);
+  border-bottom: 1px solid var(--line2);
 }
-.subLeft{
-  font-family: "IM Fell English", serif;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  font-size: 13px;
-  color: rgba(12,14,20,0.55);
+.logo{
+  font-family: "UnifrakturMaguntia", serif;
+  font-size: 44px;
+  line-height: 1;
+  color: rgba(255,255,255,0.88);
+  /* NO neon glow */
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.9);
 }
-.subRight{
+.sub{
+  margin-top: 6px;
   font-family: var(--mono);
   font-size: 12px;
-  color: rgba(12,14,20,0.48);
+  color: var(--muted);
+}
+.ticker{
+  font-size: 18px;
+  letter-spacing: 2px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.28);
+}
+.motto{
+  margin-top: 10px;
+  font-family: var(--ui);
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.70);
 }
 
-/* Grid layout like inspo */
-.portalGrid{
+/* grid columns like inspo */
+.grid{
   display:grid;
-  grid-template-columns: 260px 1fr 260px;
-  gap: 12px;
+  grid-template-columns: 240px 1fr 240px;
+  gap: 10px;
   padding: 12px;
 }
 
-/* panels (bevel corporate) */
-.panel{
-  background: linear-gradient(180deg, var(--panel), var(--panel2));
-  border: 1px solid rgba(0,0,0,0.18);
-  box-shadow:
-    inset 0 1px 0 var(--borderHi),
-    inset 0 -1px 0 rgba(0,0,0,0.08),
-    0 10px 26px rgba(0,0,0,0.16);
+/* boxes */
+.box, .post{
+  background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.22));
+  border: 1px solid rgba(255,255,255,0.14);
 }
-
-.panelHead{
-  padding: 8px 10px;
-  font-size: 12px;
+.boxhead, .posthead{
+  font-family: var(--ui);
+  font-size: 11px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: rgba(10,12,18,0.62);
-  background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.08));
-  border-bottom: 1px solid rgba(0,0,0,0.14);
-}
-
-.panelBody{
-  padding: 10px 10px 12px;
-  line-height: 1.45;
-  color: rgba(10,12,18,0.78);
-}
-
-.rule{ height:1px; background: rgba(0,0,0,0.12); margin: 10px 0; }
-.small{ font-size: 12px; }
-.muted{ color: var(--muted); }
-.mono{ font-family: var(--mono); }
-
-.leftCol, .rightCol{ display:grid; gap: 12px; align-content:start; }
-.centerCol{ display:grid; gap: 12px; }
-
-/* left menu */
-.sideMenu{ margin:0; padding-left: 16px; }
-.sideMenu li{ margin: 6px 0; }
-.sideMenu a{
-  color: rgba(10,12,18,0.72);
-  text-decoration:none;
-  border-bottom: 1px dotted rgba(10,12,18,0.24);
-}
-.sideMenu a:hover{ border-bottom-color: rgba(0,0,0,0.45); }
-
-/* HERO PANEL (center) */
-.heroPanel{ padding: 0; }
-.heroWrap{ display:grid; grid-template-columns: 1fr 320px; gap: 10px; }
-.heroText{ padding: 10px; }
-
-.heroTitle{
-  margin: 0 0 8px;
-  font-family: "UnifrakturMaguntia", serif;
-  font-size: 42px;
-  color: rgba(12,14,20,0.72);
-  text-shadow: 1px 1px 0 rgba(255,255,255,0.22), 0 3px 10px rgba(0,0,0,0.16);
-}
-.tickerLine{
-  font-family: "IM Fell English", serif;
-  letter-spacing: 1.6px;
-  font-size: 16px;
-  color: rgba(12,14,20,0.58);
-  background: rgba(255,255,255,0.12);
-  border: 1px dashed rgba(0,0,0,0.14);
   padding: 8px 10px;
+  background: rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.boxbody, .postbody{
+  padding: 10px 10px 12px;
+  line-height: 1.5;
 }
 
-/* FEATURE IMAGE: controlled size everywhere */
-.heroMedia{
-  padding: 10px;
-  border-left: 1px solid rgba(0,0,0,0.10);
-  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+.bigtitle{
+  font-family: "UnifrakturMaguntia", serif;
+  font-size: 30px;
+  color: rgba(255,255,255,0.88);
 }
-.heroMedia img{
+.small{ font-size: 13px; }
+.muted{ color: var(--muted); }
+.rule{
+  height: 1px;
+  background: rgba(255,255,255,0.10);
+  margin: 10px 0;
+}
+
+/* LEFT featured image (controlled, NOT giant) */
+.leftHero{
   width: 100%;
   display:block;
-  max-height: 140px;        /* KEY: not huge */
+  max-height: 220px;
   object-fit: cover;
-  object-position: center 35%;
-  border: 1px solid rgba(0,0,0,0.16);
-  filter: contrast(1.02) saturate(0.92) brightness(0.96);
+  object-position: center 40%;
+  border: 1px solid rgba(255,255,255,0.12);
 }
-.heroCaption{
-  margin-top: 8px;
-  display:flex;
-  justify-content: space-between;
-  gap: 8px;
+
+/* center post formatting */
+.posttitle{
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+.postmeta{
   font-family: var(--mono);
   font-size: 12px;
-  color: rgba(12,14,20,0.55);
+  color: var(--muted);
+  margin-bottom: 10px;
 }
-.capTitle{ text-transform: uppercase; letter-spacing: 1px; }
-.capSub{ color: rgba(12,14,20,0.45); }
 
-/* right buttons */
+/* thumbnail LEFT + text RIGHT (like inspo) */
+.postmedia{
+  display:grid;
+  grid-template-columns: 160px 1fr;
+  gap: 10px;
+  align-items:start;
+}
+.thumb{
+  width: 160px;
+  height: 110px;          /* FIXED SIZE => never huge */
+  object-fit: cover;
+  object-position: center 40%;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.minirow{
+  display:flex;
+  gap: 8px;
+  flex-wrap:wrap;
+  margin-top: 8px;
+}
+.miniBtn{
+  font-family: var(--ui);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.25);
+  color: rgba(255,255,255,0.85);
+  text-decoration:none;
+}
+.miniBtn:hover{ background: rgba(0,0,0,0.35); }
+
+/* buttons grid */
 .btnGrid{
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin-top: 8px;
 }
-.portalBtn{
-  display:block;
-  text-align:center;
-  padding: 10px 10px;
+.btn{
+  font-family: var(--ui);
   font-size: 12px;
-  letter-spacing: 1px;
   text-transform: uppercase;
-  color: rgba(10,12,18,0.74);
-  background: rgba(255,255,255,0.18);
-  border: 1px solid var(--borderLo);
-  box-shadow: inset 0 1px 0 var(--borderHi), inset 0 -1px 0 rgba(0,0,0,0.08);
+  letter-spacing: 1px;
+  padding: 10px 10px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.25);
+  color: rgba(255,255,255,0.88);
   text-decoration:none;
+  text-align:center;
 }
-.portalBtn:hover{ background: rgba(255,255,255,0.24); }
-.portalBtn.wide{ grid-column: 1 / -1; }
+.btn:hover{ background: rgba(0,0,0,0.35); }
 
-/* kv rows */
+/* links + form */
+.link{
+  color: rgba(255,255,255,0.85);
+  text-decoration: underline;
+  text-decoration-color: rgba(47,72,255,0.55);
+}
+.formRow{
+  display:flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.input{
+  flex:1;
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.25);
+  color: rgba(255,255,255,0.85);
+  outline:none;
+}
+.go{
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.25);
+  color: rgba(255,255,255,0.85);
+  cursor:pointer;
+}
+.go:hover{ background: rgba(0,0,0,0.35); }
+
 .kv{
   display:flex;
   justify-content: space-between;
   gap: 10px;
   padding: 6px 0;
-  border-bottom: 1px dashed rgba(0,0,0,0.10);
+  border-bottom: 1px dashed rgba(255,255,255,0.10);
 }
 .kv:last-child{ border-bottom:none; }
-.k{ font-family: var(--mono); font-size: 12px; color: rgba(12,14,20,0.52); }
-.v{ font-family: var(--mono); font-size: 12px; color: rgba(12,14,20,0.64); }
 
-/* footer */
-.footerBar{
+.footer{
   display:flex;
   justify-content: space-between;
   gap: 10px;
   padding: 10px 12px 14px;
-  border-top: 1px solid rgba(255,255,255,0.24);
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border-top: 1px solid rgba(255,255,255,0.10);
 }
 
 /* sparkles layer */
@@ -298,16 +306,10 @@ body{ font-family: var(--ui); color: var(--text); }
   z-index: 60;
 }
 
-/* mobile: stack in a “portal-like” order, not chaos */
+/* responsive: keep structure but stacked neatly */
 @media (max-width: 980px){
-  .topHeader{ grid-template-columns: 1fr; gap: 10px; }
-  .topTabs{ justify-content:flex-start; }
-  .topStatus{ justify-content:flex-start; }
-  .portalGrid{ grid-template-columns: 1fr; }
-  /* put center first visually (it already is in HTML), then right, then left */
-  .heroWrap{ grid-template-columns: 1fr; }
-  .heroMedia{ border-left: none; border-top: 1px solid rgba(0,0,0,0.10); }
-  .heroTitle{ font-size: 38px; }
-  .heroMedia img{ max-height: 160px; } /* still controlled */
+  .mast{ grid-template-columns: 1fr; }
+  .grid{ grid-template-columns: 1fr; }
+  .postmedia{ grid-template-columns: 140px 1fr; }
+  .thumb{ width: 140px; height: 100px; }
 }
-
