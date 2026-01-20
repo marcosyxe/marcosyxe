@@ -452,3 +452,44 @@ body{
   object-fit: cover;    /* mantiene proporción */
   display: block;
 }
+/* === FORCE NEOPRENO COVERS TO BE SQUARE (no matter the classes) === */
+#neopreno img{
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* target the two covers area */
+#neopreno figure{
+  margin: 0;
+}
+
+#neopreno .neoCovers,
+#neopreno .neopreno-covers{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+}
+
+/* if your covers are in figures, force the figure to be square */
+#neopreno figure{
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255,255,255,0.14) !important;
+  background: rgba(0,0,0,0.22) !important;
+}
+
+/* make images fill the square */
+#neopreno figure img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* mobile */
+@media (max-width: 980px){
+  #neopreno .neoCovers,
+  #neopreno .neopreno-covers{
+    grid-template-columns: 1fr !important;
+  }
+}
