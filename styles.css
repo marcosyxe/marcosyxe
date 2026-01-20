@@ -4,29 +4,30 @@
   --ui: Tahoma, Verdana, Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
-  /* portal steel palette */
-  --steel1: rgba(210,220,235,0.42);
-  --steel2: rgba(185,198,218,0.36);
-  --steel3: rgba(120,140,170,0.25);
+  /* corporate steel palette (more grey, less neon) */
+  --steelA: rgba(220,228,238,0.34);
+  --steelB: rgba(200,210,226,0.26);
+  --steelC: rgba(120,140,170,0.18);
 
-  --panel: rgba(225,232,245,0.28);
-  --panel2: rgba(225,232,245,0.22);
+  --panel: rgba(232,238,246,0.22);
+  --panel2: rgba(232,238,246,0.18);
 
-  --border: rgba(255,255,255,0.52);
-  --border2: rgba(0,0,0,0.22);
+  --borderHi: rgba(255,255,255,0.45);
+  --borderLo: rgba(0,0,0,0.25);
 
-  --text: rgba(18,22,30,0.92);
-  --muted: rgba(18,22,30,0.58);
+  --text: rgba(10,12,18,0.86);
+  --muted: rgba(10,12,18,0.55);
 
-  --magenta: rgba(255,43,178,0.18);
-  --teal: rgba(0,230,192,0.14);
+  /* subtle tint */
+  --magenta: rgba(255,43,178,0.10);
+  --teal: rgba(0,230,192,0.08);
 }
 
 *{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; }
 body{ font-family: var(--ui); color: var(--text); }
 
-/* ===== BACKGROUND: IMG_6561.jpeg blur 140px ===== */
+/* Background: IMG_6561 blur 140px */
 .bg{
   position: fixed;
   inset: 0;
@@ -40,281 +41,218 @@ body{ font-family: var(--ui); color: var(--text); }
   position:absolute;
   inset:0;
   background:
-    linear-gradient(180deg, rgba(8,14,30,0.36), rgba(8,14,30,0.26)),
-    radial-gradient(900px 520px at 20% 25%, var(--magenta), transparent 65%),
-    radial-gradient(900px 520px at 80% 30%, var(--teal), transparent 70%);
+    linear-gradient(180deg, rgba(8,12,24,0.35), rgba(8,12,24,0.22)),
+    radial-gradient(900px 520px at 20% 30%, var(--magenta), transparent 65%),
+    radial-gradient(900px 520px at 80% 35%, var(--teal), transparent 70%);
   mix-blend-mode: multiply;
 }
 
-/* ===== MAIN FRAME ===== */
-.frame{
-  max-width: 1040px;
-  margin: 18px auto 28px;
-  border: 1px solid var(--border);
+/* Shell */
+.portalShell{
+  max-width: 1060px;
+  margin: 16px auto 28px;
+  border: 1px solid rgba(255,255,255,0.35);
   background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.06));
   box-shadow: 0 24px 70px rgba(0,0,0,0.35);
 }
 
-/* ===== TOPBAR (portal header) ===== */
-.topbar{
+/* Top header */
+.topHeader{
   display:grid;
   grid-template-columns: 1fr auto 1fr;
-  align-items:center;
   gap: 12px;
+  align-items:center;
   padding: 10px 12px;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.10));
-  border-bottom: 1px solid rgba(255,255,255,0.38);
+  background: linear-gradient(180deg, rgba(255,255,255,0.20), rgba(255,255,255,0.08));
+  border-bottom: 1px solid rgba(255,255,255,0.30);
 }
 
-.brand{
-  display:flex;
-  align-items: baseline;
-  gap: 10px;
-}
-.brand-mark{
+/* brand */
+.brandRow{ display:flex; align-items:baseline; gap:10px; }
+.brandLogo{
   font-family: "UnifrakturMaguntia", serif;
   font-size: 22px;
-  color: rgba(16,18,26,0.78);
-  /* dirty/engraved, no neon */
-  text-shadow:
-    1px 1px 0 rgba(255,255,255,0.30),
-    0 2px 6px rgba(0,0,0,0.18);
-  filter: contrast(1.05);
+  color: rgba(12,14,20,0.74);
+  /* NO neon; engraved */
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.25), 0 2px 6px rgba(0,0,0,0.18);
 }
-.brand-sub{
+.brandSub{
   font-family: var(--mono);
   font-size: 12px;
-  color: rgba(16,18,26,0.52);
+  color: rgba(12,14,20,0.52);
 }
 
-.topnav{
+.topTabs{
   display:flex;
   gap: 6px;
   justify-content:center;
   flex-wrap:wrap;
 }
-.topnav a{
-  font-family: var(--ui);
+.topTabs a{
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
   padding: 6px 10px;
   color: rgba(10,12,18,0.74);
-  background: rgba(255,255,255,0.22);
-  border: 1px solid rgba(0,0,0,0.18);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.45),
-    inset 0 -1px 0 rgba(0,0,0,0.08);
   text-decoration:none;
-}
-.topnav a:hover{
-  border-color: rgba(255,43,178,0.28);
-  background: rgba(255,255,255,0.30);
-}
 
-.top-right{
+  background: rgba(255,255,255,0.18);
+  border: 1px solid var(--borderLo);
+  box-shadow: inset 0 1px 0 var(--borderHi), inset 0 -1px 0 rgba(0,0,0,0.08);
+}
+.topTabs a:hover{ border-color: rgba(0,0,0,0.32); background: rgba(255,255,255,0.24); }
+
+.topStatus{
   display:flex;
   justify-content:flex-end;
   gap: 8px;
   flex-wrap:wrap;
 }
-.chip{
+.statusChip{
   font-family: var(--mono);
   font-size: 12px;
   padding: 5px 8px;
-  background: rgba(255,255,255,0.26);
-  border: 1px solid rgba(0,0,0,0.18);
+  background: rgba(255,255,255,0.18);
+  border: 1px solid var(--borderLo);
   color: rgba(0,0,0,0.68);
 }
-.chip.danger{
-  background: rgba(255,43,178,0.16);
-  border-color: rgba(255,43,178,0.30);
-  color: rgba(70,0,40,0.78);
+.statusChip.danger{
+  background: rgba(255,43,178,0.12);
+  border-color: rgba(255,43,178,0.22);
+  color: rgba(70,0,40,0.75);
 }
 
-/* ===== HERO ===== */
-.hero{
-  padding: 14px 16px 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.26);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+/* thin subheader */
+.subHeader{
+  display:flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+  border-bottom: 1px solid rgba(255,255,255,0.20);
 }
-.title{
-  margin: 0;
-  font-family: "UnifrakturMaguntia", serif;
-  font-size: 56px;
-  color: rgba(16,18,26,0.72);
-  text-shadow:
-    1px 1px 0 rgba(255,255,255,0.28),
-    0 4px 10px rgba(0,0,0,0.16);
-  /* make it feel “raster/dirty” */
-  filter: contrast(1.1) grayscale(0.05);
-}
-.motto{
-  margin-top: 6px;
+.subLeft{
   font-family: "IM Fell English", serif;
-  font-size: 15px;
-  letter-spacing: 1.4px;
   text-transform: uppercase;
-  color: rgba(16,18,26,0.56);
+  letter-spacing: 1.2px;
+  font-size: 13px;
+  color: rgba(12,14,20,0.55);
+}
+.subRight{
+  font-family: var(--mono);
+  font-size: 12px;
+  color: rgba(12,14,20,0.48);
 }
 
-/* ticker */
-.ticker{
-  margin-top: 10px;
-  padding: 10px;
-  background: rgba(255,255,255,0.14);
-  border: 1px solid rgba(0,0,0,0.16);
-  border-left-color: rgba(255,255,255,0.40);
-  border-top-color: rgba(255,255,255,0.40);
-}
-.ticker-inner{
-  font-family: "IM Fell English", serif;
-  font-size: 18px;
-  letter-spacing: 2px;
-  color: rgba(16,18,26,0.62);
-}
-
-/* ===== PORTAL GRID ===== */
-.portal{
+/* Grid layout like inspo */
+.portalGrid{
   display:grid;
-  grid-template-columns: 240px 1fr 240px;
+  grid-template-columns: 260px 1fr 260px;
   gap: 12px;
-  padding: 12px 12px 16px;
+  padding: 12px;
 }
 
-.side, .center, .right{
-  display:grid;
-  gap: 12px;
-}
-
-/* ===== PANELS (bevel) ===== */
+/* panels (bevel corporate) */
 .panel{
   background: linear-gradient(180deg, var(--panel), var(--panel2));
   border: 1px solid rgba(0,0,0,0.18);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.55),
+    inset 0 1px 0 var(--borderHi),
     inset 0 -1px 0 rgba(0,0,0,0.08),
     0 10px 26px rgba(0,0,0,0.16);
 }
 
-.ph{
+.panelHead{
   padding: 8px 10px;
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: rgba(16,18,26,0.65);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.10));
+  color: rgba(10,12,18,0.62);
+  background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.08));
   border-bottom: 1px solid rgba(0,0,0,0.14);
 }
 
-.pb{
+.panelBody{
   padding: 10px 10px 12px;
-  color: rgba(16,18,26,0.78);
   line-height: 1.45;
+  color: rgba(10,12,18,0.78);
 }
 
-.rule{
-  height: 1px;
-  background: rgba(0,0,0,0.12);
-  margin: 10px 0;
-}
-
+.rule{ height:1px; background: rgba(0,0,0,0.12); margin: 10px 0; }
 .small{ font-size: 12px; }
 .muted{ color: var(--muted); }
 .mono{ font-family: var(--mono); }
 
-/* menu list */
-.menu{ margin:0; padding-left: 16px; }
-.menu li{ margin: 6px 0; }
-.menu a{
-  color: rgba(10,12,18,0.76);
-  text-decoration: none;
-  border-bottom: 1px dotted rgba(10,12,18,0.26);
-}
-.menu a:hover{
-  border-bottom-color: rgba(255,43,178,0.45);
-}
+.leftCol, .rightCol{ display:grid; gap: 12px; align-content:start; }
+.centerCol{ display:grid; gap: 12px; }
 
-/* stats table */
-.stats div{
-  display:flex;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 6px 0;
-  border-bottom: 1px dashed rgba(0,0,0,0.10);
+/* left menu */
+.sideMenu{ margin:0; padding-left: 16px; }
+.sideMenu li{ margin: 6px 0; }
+.sideMenu a{
+  color: rgba(10,12,18,0.72);
+  text-decoration:none;
+  border-bottom: 1px dotted rgba(10,12,18,0.24);
 }
-.stats div:last-child{ border-bottom: none; }
-.stats .k{ font-family: var(--mono); color: rgba(16,18,26,0.56); font-size: 12px; }
-.stats .v{ font-family: var(--mono); font-size: 12px; }
+.sideMenu a:hover{ border-bottom-color: rgba(0,0,0,0.45); }
 
-/* feature block */
-.feature .pb{ padding: 10px; }
-.feature-grid{
-  display:grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 10px;
-  align-items: start;
+/* HERO PANEL (center) */
+.heroPanel{ padding: 0; }
+.heroWrap{ display:grid; grid-template-columns: 1fr 320px; gap: 10px; }
+.heroText{ padding: 10px; }
+
+.heroTitle{
+  margin: 0 0 8px;
+  font-family: "UnifrakturMaguntia", serif;
+  font-size: 42px;
+  color: rgba(12,14,20,0.72);
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.22), 0 3px 10px rgba(0,0,0,0.16);
 }
-.feature-media{
-  border: 1px solid rgba(0,0,0,0.16);
+.tickerLine{
+  font-family: "IM Fell English", serif;
+  letter-spacing: 1.6px;
+  font-size: 16px;
+  color: rgba(12,14,20,0.58);
   background: rgba(255,255,255,0.12);
-  padding: 8px;
+  border: 1px dashed rgba(0,0,0,0.14);
+  padding: 8px 10px;
 }
-.feature-media img{
+
+/* FEATURE IMAGE: controlled size everywhere */
+.heroMedia{
+  padding: 10px;
+  border-left: 1px solid rgba(0,0,0,0.10);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+}
+.heroMedia img{
   width: 100%;
   display:block;
-  max-height: 260px;
+  max-height: 140px;        /* KEY: not huge */
   object-fit: cover;
-  filter: contrast(1.02) saturate(0.95);
-  border: 1px solid rgba(0,0,0,0.14);
+  object-position: center 35%;
+  border: 1px solid rgba(0,0,0,0.16);
+  filter: contrast(1.02) saturate(0.92) brightness(0.96);
 }
-.feature-title{
-  font-family: var(--mono);
-  font-size: 13px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.feature-sub{
-  font-size: 12px;
-  color: rgba(16,18,26,0.56);
-  margin-top: 6px;
-}
-
-.cta-row{
+.heroCaption{
+  margin-top: 8px;
   display:flex;
+  justify-content: space-between;
   gap: 8px;
-  flex-wrap:wrap;
-  margin-top: 10px;
-}
-.btn{
-  display:inline-block;
-  padding: 7px 10px;
+  font-family: var(--mono);
   font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: rgba(10,12,18,0.74);
-  background: rgba(255,255,255,0.22);
-  border: 1px solid rgba(0,0,0,0.18);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.45),
-    inset 0 -1px 0 rgba(0,0,0,0.08);
-  text-decoration:none;
+  color: rgba(12,14,20,0.55);
 }
-.btn:hover{
-  border-color: rgba(255,43,178,0.28);
-}
+.capTitle{ text-transform: uppercase; letter-spacing: 1px; }
+.capSub{ color: rgba(12,14,20,0.45); }
 
-/* right buttons grid */
-.gridbtns{
+/* right buttons */
+.btnGrid{
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   margin-top: 8px;
 }
-.btn2{
+.portalBtn{
   display:block;
   text-align:center;
   padding: 10px 10px;
@@ -322,27 +260,37 @@ body{ font-family: var(--ui); color: var(--text); }
   letter-spacing: 1px;
   text-transform: uppercase;
   color: rgba(10,12,18,0.74);
-  background: rgba(255,255,255,0.22);
-  border: 1px solid rgba(0,0,0,0.18);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.45),
-    inset 0 -1px 0 rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.18);
+  border: 1px solid var(--borderLo);
+  box-shadow: inset 0 1px 0 var(--borderHi), inset 0 -1px 0 rgba(0,0,0,0.08);
   text-decoration:none;
 }
-.btn2:hover{ border-color: rgba(255,43,178,0.28); }
-.btn2.wide{ grid-column: 1 / -1; }
+.portalBtn:hover{ background: rgba(255,255,255,0.24); }
+.portalBtn.wide{ grid-column: 1 / -1; }
+
+/* kv rows */
+.kv{
+  display:flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.10);
+}
+.kv:last-child{ border-bottom:none; }
+.k{ font-family: var(--mono); font-size: 12px; color: rgba(12,14,20,0.52); }
+.v{ font-family: var(--mono); font-size: 12px; color: rgba(12,14,20,0.64); }
 
 /* footer */
-.footer{
+.footerBar{
   display:flex;
   justify-content: space-between;
   gap: 10px;
   padding: 10px 12px 14px;
-  border-top: 1px solid rgba(255,255,255,0.30);
-  background: rgba(255,255,255,0.08);
+  border-top: 1px solid rgba(255,255,255,0.24);
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
 }
 
-/* Sparkles layer from your script */
+/* sparkles layer */
 #sparkles{
   position: fixed;
   inset: 0;
@@ -350,28 +298,16 @@ body{ font-family: var(--ui); color: var(--text); }
   z-index: 60;
 }
 
-/* keep sparkle look simple */
-.sparkle{
-  position:absolute;
-  transform:translate(-50%,-50%);
-  border-radius:999px;
-  background: radial-gradient(circle, rgba(255,43,178,0.55), transparent 60%);
-  box-shadow: 0 0 10px rgba(255,43,178,0.35), 0 0 14px rgba(0,230,192,0.20);
-  opacity:.85;
-  animation:sparklePop .5s ease-out forwards;
-}
-@keyframes sparklePop{
-  from{ transform:translate(-50%,-50%) scale(.4); opacity:0; }
-  to{ transform:translate(-50%,-80%) scale(1.2); opacity:0; }
-}
-
-/* responsive */
+/* mobile: stack in a “portal-like” order, not chaos */
 @media (max-width: 980px){
-  .topbar{ grid-template-columns: 1fr; gap: 10px; }
-  .topnav{ justify-content:flex-start; }
-  .top-right{ justify-content:flex-start; }
-  .portal{ grid-template-columns: 1fr; }
-  .feature-grid{ grid-template-columns: 1fr; }
-  .title{ font-size: 44px; }
+  .topHeader{ grid-template-columns: 1fr; gap: 10px; }
+  .topTabs{ justify-content:flex-start; }
+  .topStatus{ justify-content:flex-start; }
+  .portalGrid{ grid-template-columns: 1fr; }
+  /* put center first visually (it already is in HTML), then right, then left */
+  .heroWrap{ grid-template-columns: 1fr; }
+  .heroMedia{ border-left: none; border-top: 1px solid rgba(0,0,0,0.10); }
+  .heroTitle{ font-size: 38px; }
+  .heroMedia img{ max-height: 160px; } /* still controlled */
 }
 
