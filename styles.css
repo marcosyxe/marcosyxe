@@ -432,3 +432,23 @@ body{
   height: auto;     /* mantiene el cuadrado original */
   border: 1px solid rgba(255,255,255,0.25);
 }
+/* === FIX IMÁGENES CUADRADAS (NO RECTÁNGULOS) === */
+
+.neopreno-covers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.neopreno-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* fuerza cuadrado */
+  overflow: hidden;
+}
+
+.neopreno-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* mantiene proporción */
+  display: block;
+}
