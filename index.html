@@ -9,147 +9,167 @@
 </head>
 
 <body>
-  <!-- Background blur layer -->
+  <!-- background blur -->
   <div class="bg" aria-hidden="true"></div>
 
-  <div class="portalShell">
-    <!-- Top header bar (like inspo) -->
-    <header class="topHeader">
-      <div class="brandRow">
-        <div class="brandLogo">marcosyxe</div>
-        <div class="brandSub">online archive</div>
+  <div class="page">
+
+    <!-- TOP TABS (inspo style) -->
+    <header class="topbar">
+      <div class="tabs">
+        <a class="tab" href="#music">STUDIO</a>
+        <a class="tab" href="#about">ABOUT</a>
+        <a class="tab" href="#news">NEWS</a>
+        <a class="tab" href="#music">DISCOGRAPHY</a>
+        <a class="tab" href="#visuals">VISUALS</a>
+        <a class="tab" href="#links">COMMUNITY</a>
       </div>
 
-      <nav class="topTabs">
-        <a href="#music">MUSIC</a>
-        <a href="#visuals">VISUALS</a>
-        <a href="#news">NEWS</a>
-        <a href="#links">LINKS</a>
-      </nav>
-
-      <div class="topStatus">
-        <span class="statusChip" id="clock">ONLINE</span>
-        <span class="statusChip danger">!! new upload</span>
+      <div class="topright">
+        <div class="clock" id="clock">ONLINE</div>
+        <div class="newupload">!! new upload</div>
       </div>
     </header>
 
-    <!-- Sub bar (thin) -->
-    <div class="subHeader">
-      <div class="subLeft">aquestes pijas el camí tenen fet</div>
-      <div class="subRight">marcosyxe.github.io</div>
-    </div>
+    <!-- HEADER STRIP -->
+    <section class="mast">
+      <div class="mast-left">
+        <div class="logo">marcosyxe</div>
+        <div class="sub">online archive</div>
+      </div>
 
-    <!-- Main 3-column portal layout -->
-    <main class="portalGrid">
-      <!-- LEFT SIDEBAR -->
-      <aside class="leftCol">
-        <section class="panel">
-          <div class="panelHead">CATEGORIES</div>
-          <div class="panelBody">
-            <ul class="sideMenu">
-              <li><a href="#music">MUSIC / RELEASES</a></li>
-              <li><a href="#visuals">VISUAL ARCHIVE</a></li>
-              <li><a href="#news">UPDATES</a></li>
-              <li><a href="#links">CONTACT / LINKS</a></li>
-            </ul>
+      <div class="mast-center">
+        <div class="ticker">
+          ★ WELCOME ★ NEOPRENO OUT NOW ★ SUBLIMACJA MUSIC VIDEO ★ ENTER THE ARCHIVE ★ ALSAYFA ★ BEHIND THE SCENES ★
+        </div>
+        <div class="motto">aquestes pijas el camí tenen fet</div>
+      </div>
+    </section>
+
+    <!-- 3 COLUMNS -->
+    <main class="grid">
+
+      <!-- LEFT COLUMN (big image + small blocks) -->
+      <aside class="left">
+
+        <section class="box">
+          <div class="boxhead">IN THE STUDIO WITH</div>
+          <div class="boxbody">
+            <div class="bigtitle">marcosyxe</div>
+            <div class="small muted">
+              live archive / visuals / announcements / behind the scenes
+            </div>
           </div>
         </section>
 
-        <section class="panel">
-          <div class="panelHead">ABOUT</div>
-          <div class="panelBody">
+        <section class="box">
+          <div class="boxhead">FEATURED VISUAL</div>
+          <div class="boxbody">
+            <img class="leftHero"
+              src="images/01C45E5C-1F56-46BA-810B-F05FC05E1733.jpeg"
+              alt="featured visual">
+          </div>
+        </section>
+
+        <section class="box" id="about">
+          <div class="boxhead">ABOUT</div>
+          <div class="boxbody">
             <p><b>marcosyxe</b> is an experimental music producer blending industrial textures with world influences.</p>
-            <div class="rule"></div>
             <p class="small"><b>Now:</b> NEOPRENO — out now.</p>
           </div>
         </section>
 
-        <section class="panel">
-          <div class="panelHead">NOTES</div>
-          <div class="panelBody small muted">
-            best viewed at 2am.<br/>
-            archive updates incoming.
-          </div>
-        </section>
       </aside>
 
-      <!-- CENTER CONTENT -->
-      <section class="centerCol">
-        <!-- Hero / Featured (like big center panel in inspo) -->
-        <section class="panel heroPanel">
-          <div class="heroWrap">
-            <div class="heroText">
-              <h1 class="heroTitle">marcosyxe</h1>
-              <div class="tickerLine">
-                ★ WELCOME ★ NEOPRENO OUT NOW ★ SUBLIMACJA MUSIC VIDEO ★ ENTER THE ARCHIVE ★ ALSAYFA ★ BEHIND THE SCENES ★
+      <!-- CENTER COLUMN (posts/modules) -->
+      <section class="center">
+
+        <section class="post" id="news">
+          <div class="posthead">NEWS</div>
+          <div class="postbody">
+            <div class="posttitle">NEOPRENO — out now</div>
+            <div class="postmeta">30.01.2026 — marcosyxe</div>
+
+            <!-- SMALL thumbnail on the LEFT (NOT HUGE) -->
+            <div class="postmedia">
+              <img class="thumb"
+                src="images/01C45E5C-1F56-46BA-810B-F05FC05E1733.jpeg"
+                alt="thumb">
+              <div class="posttext">
+                <p class="small">
+                  Listen + visuals + behind the scenes. Next updates: Sublimacja music video + archive drops.
+                </p>
+                <div class="minirow">
+                  <a class="miniBtn" href="#music">listen</a>
+                  <a class="miniBtn" href="#visuals">visuals</a>
+                  <a class="miniBtn" href="#links">follow</a>
+                </div>
               </div>
             </div>
 
-            <div class="heroMedia">
-              <img src="images/01C45E5C-1F56-46BA-810B-F05FC05E1733.jpeg" alt="featured visual">
-              <div class="heroCaption">
-                <span class="capTitle">NEOPRENO</span>
-                <span class="capSub">visual file / archive preview</span>
-              </div>
-            </div>
           </div>
         </section>
 
-        <!-- Updates -->
-        <section class="panel" id="news">
-          <div class="panelHead">UPDATES</div>
-          <div class="panelBody">
-            <p><b>30.01.2026</b> — <b>NEOPRENO</b> the album out now.</p>
-            <p class="small muted">Add more posts later: behind the scenes, video drops, announcements.</p>
-          </div>
-        </section>
-
-        <!-- Visuals -->
-        <section class="panel" id="visuals">
-          <div class="panelHead">VISUAL ARCHIVE</div>
-          <div class="panelBody">
+        <section class="post" id="visuals">
+          <div class="posthead">VISUAL ARCHIVE</div>
+          <div class="postbody">
             <p class="small"><b>coming soon</b></p>
-            <p class="muted">Next: thumbnails + stickers in this area.</p>
+            <p class="muted small">Aquí pondremos thumbnails + stickers (como collage 2003).</p>
           </div>
         </section>
+
+        <section class="post" id="music">
+          <div class="posthead">MUSIC</div>
+          <div class="postbody">
+            <div class="btnGrid">
+              <a class="btn" href="https://open.spotify.com/artist/5dq0rbeFgF8bfHyHK5cG3L?si=betkT0M4QLqlBc7_ppkUbw" target="_blank" rel="noopener">Spotify</a>
+              <a class="btn" href="https://music.apple.com/es/artist/marcosyxe/1743644428" target="_blank" rel="noopener">Apple Music</a>
+              <a class="btn" href="https://marcosyxe.bandcamp.com/community" target="_blank" rel="noopener">Bandcamp</a>
+              <a class="btn" href="https://youtube.com/@marcosyxe-ev7iy?si=WXS_N9iDZQ2gd7uy" target="_blank" rel="noopener">YouTube</a>
+            </div>
+          </div>
+        </section>
+
       </section>
 
-      <!-- RIGHT SIDEBAR -->
-      <aside class="rightCol">
-        <section class="panel" id="music">
-          <div class="panelHead">MUSIC</div>
-          <div class="panelBody">
-            <div class="small"><b>Listen on</b></div>
-            <div class="btnGrid">
-              <a class="portalBtn" href="https://open.spotify.com/artist/5dq0rbeFgF8bfHyHK5cG3L?si=betkT0M4QLqlBc7_ppkUbw" target="_blank" rel="noopener">Spotify</a>
-              <a class="portalBtn" href="https://music.apple.com/es/artist/marcosyxe/1743644428" target="_blank" rel="noopener">Apple Music</a>
-              <a class="portalBtn" href="https://marcosyxe.bandcamp.com/community" target="_blank" rel="noopener">Bandcamp</a>
-              <a class="portalBtn" href="https://youtube.com/@marcosyxe-ev7iy?si=WXS_N9iDZQ2gd7uy" target="_blank" rel="noopener">YouTube</a>
+      <!-- RIGHT COLUMN (small widgets like inspo) -->
+      <aside class="right">
+
+        <section class="box">
+          <div class="boxhead">REGISTRATION</div>
+          <div class="boxbody">
+            <div class="small">Join the archive mailing list (soon).</div>
+            <div class="formRow">
+              <input class="input" placeholder="email address" />
+              <button class="go" type="button">go</button>
             </div>
+            <div class="small muted">Registered users: <b>log in</b> (fake)</div>
           </div>
         </section>
 
-        <section class="panel" id="links">
-          <div class="panelHead">LINKS</div>
-          <div class="panelBody">
-            <a class="portalBtn wide" href="https://www.instagram.com/marcosyxe?igsh=aWV5dWlmcXVyam92&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+        <section class="box" id="links">
+          <div class="boxhead">LINKS</div>
+          <div class="boxbody">
+            <a class="link" href="https://www.instagram.com/marcosyxe?igsh=aWV5dWlmcXVyam92&utm_source=qr" target="_blank" rel="noopener">instagram.com/marcosyxe</a>
           </div>
         </section>
 
-        <section class="panel">
-          <div class="panelHead">SYSTEM</div>
-          <div class="panelBody small">
-            <div class="kv"><span class="k">mode</span><span class="v">archive</span></div>
-            <div class="kv"><span class="k">state</span><span class="v">online</span></div>
-            <div class="kv"><span class="k">year</span><span class="v"><span id="year"></span></span></div>
+        <section class="box">
+          <div class="boxhead">SYSTEM</div>
+          <div class="boxbody small">
+            <div class="kv"><span>mode</span><span>archive</span></div>
+            <div class="kv"><span>state</span><span>online</span></div>
+            <div class="kv"><span>year</span><span id="year"></span></div>
           </div>
         </section>
+
       </aside>
+
     </main>
 
-    <footer class="footerBar">
-      <span class="mono muted">© <span id="year"></span> marcosyxe</span>
-      <span class="mono muted">corporate portal / 2003 energy</span>
+    <footer class="footer">
+      <span class="muted small">© <span id="year"></span> marcosyxe</span>
+      <span class="muted small">best viewed at 2am</span>
     </footer>
   </div>
 
