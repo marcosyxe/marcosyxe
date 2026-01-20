@@ -63,7 +63,7 @@ body{
   align-items:center;
   gap: 10px;
   padding: 10px 10px;
-  background: linear-gradient(180deg, rgba(255, 43, 178, 0.55), rgba(120, 0, 80, 0.85));
+  background: linear-gradient(180deg, rgba(255, 43, 178, 0.50), rgba(10, 10, 80, 30,0.85));
   border-bottom: 1px solid rgba(0,0,0,0.55);
 }
 .tabs{
