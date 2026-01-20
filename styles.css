@@ -493,3 +493,19 @@ body{
     grid-template-columns: 1fr !important;
   }
 }
+/* --- make neopreno cover images fill the square --- */
+#neopreno figure{
+  display: grid !important;      /* makes img fill available space */
+  grid-template-rows: 1fr auto !important;
+}
+
+#neopreno figure img{
+  width: 100% !important;
+  height: 100% !important;       /* KEY: fill square height */
+  object-fit: cover !important;  /* crop nicely */
+  object-position: center !important;
+}
+
+#neopreno figure figcaption{
+  padding: 6px 0 0 !important;
+}
