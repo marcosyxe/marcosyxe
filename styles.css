@@ -539,3 +539,33 @@ body{
 @media (max-width: 980px){
   #neopreno .coverGrid{ grid-template-columns: 1fr; }
 }
+/* ERA GALLERY – FIX DEFINITIVO */
+
+.eraGallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 x 3 = 9 */
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.eraGallery figure {
+  aspect-ratio: 1 / 1;     /* CUADRADO REAL */
+  width: 100%;
+  background: #111;
+  border: 1px solid #333;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eraGallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* NO se deforma */
+  display: block;
+}
+
+.eraGallery figcaption {
+  display: none;           /* limpio, sin texto debajo */
+}
