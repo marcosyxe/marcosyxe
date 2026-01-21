@@ -569,3 +569,16 @@ body{
 .eraGallery figcaption {
   display: none;           /* limpio, sin texto debajo */
 }
+.audioPlayer{
+  width: 100%;
+  display: block;
+}
+
+.tallPoster{
+  width: 100%;
+  aspect-ratio: 3 / 4;   /* rectangular alta */
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.22);
+}
