@@ -637,3 +637,14 @@ body{
   transform: scale(1.03) rotate(0deg);
   z-index: 5;
 }
+.collage img:nth-child(6) {
+  top: 120px;
+  left: 200px;
+  transform: rotate(-7deg);
+}
+
+.collage img:nth-child(7) {
+  bottom: 100px;
+  right: 180px;
+  transform: rotate(3deg);
+}
