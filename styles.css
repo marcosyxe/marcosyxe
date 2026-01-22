@@ -648,3 +648,16 @@ body{
   right: 180px;
   transform: rotate(3deg);
 }
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  padding: 20px;
+}
+
+.archive-grid img {
+  width: 100%;
+  display: block;
+  opacity: 0.9;
+  filter: contrast(1.05);
+}
