@@ -650,14 +650,15 @@ body{
 }
 .archive-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  padding: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 12px;
 }
 
 .archive-grid img {
   width: 100%;
+  max-height: 180px;
+  object-fit: cover;
   display: block;
   opacity: 0.9;
-  filter: contrast(1.05);
 }
